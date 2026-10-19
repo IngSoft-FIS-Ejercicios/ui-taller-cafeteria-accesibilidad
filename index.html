@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Artesanal - Inicio</title>
+    <link rel="stylesheet" href="./interface/style.css">
+</head>
+<body>
+
+    <!-- Header con problemas de semántica -->
+    <header class="site-header">
+        <div class="logo">☕ Café Artesanal</div>
+        <nav class="nav-menu">
+            <a href="#menu">Menú</a>
+            <a href="#reservas">Reservas</a>
+            <!-- Botón simulado sin atributos de accesibilidad ni teclado -->
+            <button id="allergen-btn" class="btn-link">Ver alérgenos</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Salto de encabezado intencional (h1 a h3) -->
+        <section class="hero">
+            <h3>Bienvenidos a nuestra cafetería</h3>
+            <p class="subtitle">El mejor café de grano seleccionado directo a tu taza.</p>
+        </section>
+
+        <!-- Sección de Menú -->
+        <section id="menu" class="menu-section">
+            <h2>Nuestras Especialidades</h2>
+            <div class="menu-grid">
+                <article class="card">
+                    <h4>Espresso Tradicional</h4>
+                    <p class="card-desc">Intenso y aromático.</p>
+                    <span class="price">$2.50</span>
+                </article>
+                <article class="card">
+                    <h4>Latte Macchiato</h4>
+                    <p class="card-desc">Suave con leche vaporizada.</p>
+                    <span class="price">$3.80</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Formulario con fallas de accesibilidad y etiquetas incompletas -->
+        <section id="reservas" class="reservation-section">
+            <h2>Reserva tu mesa</h2>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <!-- Falta etiqueta for y asociación correcta -->
+                    <span>Nombre completo</span>
+                    <input type="text" id="nombre" placeholder="Ej. Ana Pérez">
+                </div>
+
+                <div class="form-group">
+                    <span>Correo electrónico</span>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <span>Cantidad de personas</span>
+                    <input type="number" id="personas" min="1" max="10">
+                </div>
+
+                <!-- Simulación de error estático sin aria-describedby -->
+                <div id="error-message" class="error-hidden">Por favor, complete todos los campos obligatorios.</div>
+
+                <button type="submit" class="btn-primary">Confirmar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal inaccesible (sin trampa de foco ni roles iniciales correctos) -->
+    <div id="allergen-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h3>Información de Alérgenos</h3>
+            <p>Nuestros productos pueden contener trazas de leche, frutos secos y gluten. Consulte a nuestro personal ante cualquier duda específica.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Cafetería Artesanal. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script básico con la lógica defectuosa del modal que el alumno debe adaptar -->
+    <script>
+        const modal = document.getElementById('allergen-modal');
+        const openBtn = document.getElementById('allergen-btn');
+        const closeBtn = document.getElementById('close-modal');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            // Falta mover el foco aquí
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            // Falta retornar el foco aquí
+        });
+    </script>
+</body>
+</html>
