@@ -13,6 +13,17 @@
         <div class="logo">☕ Café Artesanal</div>
         <nav class="nav-menu">
             <a href="#menu">Menú</a>
+            
+            <!-- Menú desplegable personalizado de categorías (Con fallas de accesibilidad) -->
+            <div class="dropdown-container">
+                <button id="dropdown-btn" class="dropdown-toggle">Nuestros Orígenes</button>
+                <div id="dropdown-menu" class="dropdown-content hidden">
+                    <a href="#origen-latam">América Latina</a>
+                    <a href="#origen-africa">África</a>
+                    <a href="#origen-asia">Asia-Pacífico</a>
+                </div>
+            </div>
+
             <a href="#reservas">Reservas</a>
             <!-- Botón simulado sin atributos de accesibilidad ni teclado -->
             <button id="allergen-btn" class="btn-link">Ver alérgenos</button>
@@ -84,8 +95,17 @@
         <p>&copy; 2026 Cafetería Artesanal. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script básico con la lógica defectuosa del modal que el alumno debe adaptar -->
+    <!-- Script básico con lógica defectuosa de menús y modales que el alumno debe refactorizar -->
     <script>
+        // Lógica del menú desplegable (Sin soporte de teclado ni atributos ARIA)
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        dropdownBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Lógica del Modal de Alérgenos
         const modal = document.getElementById('allergen-modal');
         const openBtn = document.getElementById('allergen-btn');
         const closeBtn = document.getElementById('close-modal');

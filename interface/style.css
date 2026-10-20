@@ -154,3 +154,44 @@ input {
     background-color: #343a40;
     color: var(--text-muted); /* Falla WCAG de contraste en footer */
 }
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+.dropdown-toggle {
+    color: #ffffff;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content.hidden {
+    display: none;
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
